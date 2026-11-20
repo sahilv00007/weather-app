@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Search any city and see its live weather and a 5-day forecast.">
+  <title>Weather Now</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <h1>Weather Now</h1>
+    <p class="intro">Search a city to see live conditions and the next 5 days.</p>
+
+    <form id="form" novalidate>
+      <label for="city" class="visually-hidden">City name</label>
+      <input type="search" id="city" name="city" placeholder="Try Pune, Delhi or London" maxlength="60" autocomplete="off">
+      <button type="submit" id="search">Search</button>
+    </form>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <section id="current" class="current" aria-labelledby="place" hidden>
+      <div class="current-info">
+        <h2 id="place"></h2>
+        <p id="today" class="date"></p>
+        <p id="condition" class="condition"></p>
+        <p id="range" class="range"></p>
+      </div>
+      <div class="current-temp">
+        <span id="current-icon" class="icon big" aria-hidden="true"></span>
+        <p id="temp" class="temp"></p>
+      </div>
+    </section>
+
+    <section id="forecast-section" aria-labelledby="forecast-title" hidden>
+      <h2 id="forecast-title" class="section-title">5-day forecast</h2>
+      <ul id="forecast" class="forecast"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Weather data from <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a></p>
+  </footer>
+</body>
+</html>
